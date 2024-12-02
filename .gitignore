@@ -128,5 +128,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-/.angular/cache
-.angular/cache/18.2.12/BooksInventoryManagementUI/vite/deps/_metadata.json
+.angular/cache
+.angular/
