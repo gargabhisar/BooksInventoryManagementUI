@@ -3,6 +3,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl} f
 import { Router } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -33,13 +34,12 @@ export class LoginComponent {
     loginresult.subscribe((data: any) => {
       if(data.statusCode == 400)
       {
-        alert(data.validation[0].title);
-        // Swal.fire({
-        //   title: data.validation[0].title,
-        //   text: data.validation[0].details,
-        //   icon: 'error',
-        //   confirmButtonText: 'Ok'
-        // });
+        Swal.fire({
+          title: data.validation[0].title,
+          text: data.validation[0].details,
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        });
       }
       else{
         sessionStorage.setItem('result', JSON.stringify(data.result));
