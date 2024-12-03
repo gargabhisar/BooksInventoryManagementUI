@@ -28,26 +28,24 @@ export class LoginComponent {
       return;
     }
 
-    alert(
-      this.loginForm.value.useremail + ' | ' + this.loginForm.value.userpassword
-    );
+    let loginresult = this.webapi.login(this.loginForm.value);
 
-    //let loginresult = this.webapi.login(this.loginForm.value);
-
-    // loginresult.subscribe((data: any) => {
-    //   if(data.statusCode == 400)
-    //   {
-    //     Swal.fire({
-    //       title: data.validation[0].title,
-    //       text: data.validation[0].details,
-    //       icon: 'error',
-    //       confirmButtonText: 'Ok'
-    //     });
-    //   }
-    //   else{
-    //     sessionStorage.setItem('result', JSON.stringify(data.result));
-    //     this.router.navigateByUrl('/home/dashboard')
-    //   }
-    // })
+    loginresult.subscribe((data: any) => {
+      if(data.statusCode == 400)
+      {
+        alert(data.validation[0].title);
+        // Swal.fire({
+        //   title: data.validation[0].title,
+        //   text: data.validation[0].details,
+        //   icon: 'error',
+        //   confirmButtonText: 'Ok'
+        // });
+      }
+      else{
+        sessionStorage.setItem('result', JSON.stringify(data.result));
+        console.log(data.result);
+        //this.router.navigateByUrl('/home/dashboard')
+      }
+    })
   }
 }
