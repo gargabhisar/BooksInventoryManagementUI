@@ -43,7 +43,7 @@ export class LoginComponent {
       }
       else{
         sessionStorage.setItem('result', JSON.stringify(data.result));
-        this.router.navigateByUrl('/home/dashboard')
+        this.router.navigateByUrl('/dashboard')
       }
     })
   }
