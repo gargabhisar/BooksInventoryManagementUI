@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faHouse, faBook } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -13,4 +13,5 @@ import { faSearch, faHouse } from '@fortawesome/free-solid-svg-icons';
 export class HomeComponent {
   faSearch = faSearch;
   faHouse = faHouse;
+  faBook = faBook;
 }
