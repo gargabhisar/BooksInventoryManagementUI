@@ -1,5 +1,17 @@
 <div class="container table-responsive py-5">
     <h2 class="text-center">Books</h2>
+    <div class="container mt-4">
+        <div class="d-flex flex-wrap gap-2">
+          <button
+            *ngFor="let letter of alphabets"
+            class="btn"
+            [ngClass]="{ 'btn-primary': selectedLetter === letter, 'btn-outline-primary': selectedLetter !== letter }"
+            (click)="selectLetter(letter)"
+          >
+            {{ letter }}
+          </button>
+        </div>
+      </div>
     <hr>
     <table class="table table-bordered">
         <thead class="thead-dark">
