@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../services/api.service';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Book } from '../Models/Book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -17,7 +17,7 @@ export class BooksComponent {
   alphabets: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   selectedLetter: string = 'A'; // Default selected letter is 'A'
 
-  constructor(private webapi: ApiService, private sanitizer: DomSanitizer) {
+  constructor(private webapi: ApiService, private router: Router) {
     let getMyBooksCall = this.webapi.getBooksByAlphabet("A");
     getMyBooksCall.subscribe((data: any) => {
       this.books = data.result;
@@ -33,7 +33,7 @@ export class BooksComponent {
     })
   }
 
-  getImage(img: any) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(img);
+  updateBook(book: Book) {
+    this.router.navigate(['/bookupdate'], { state: book });
   }
 }
