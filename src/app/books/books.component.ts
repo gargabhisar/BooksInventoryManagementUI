@@ -28,7 +28,7 @@ export class BooksComponent {
     this.selectedLetter = letter;
     let getMyBooksCall = this.webapi.getBooksByAlphabet(this.selectedLetter);
     getMyBooksCall.subscribe((data: any) => {
-      this.books = data.result;
+      this.books = data.result || [];
     })
   }
 

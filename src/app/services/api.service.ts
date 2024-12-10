@@ -8,7 +8,7 @@ export class ApiService {
 
   private data: any = null;
 
-  private base_url = "https://localhost:7203/";
+  private base_url = "http://localhost:8080/";
   private UserLogin_url = "Login/AdminLogin";
   private GetBooksByAlphabet_url = "Books/GetBooksByAlphabet";
 
