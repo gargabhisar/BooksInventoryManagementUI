@@ -25,32 +25,31 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><img src="test.jpg" height="150"></td>
-                <td>Book Title</td>
-                <td>Book ISBN</td>
-                <td>Book Author</td>
+            <tr *ngFor="let book of books">
+                <td><img [src]="'data:image/png;base64,' + book.image" height="150" alt="{{ book.title }}"></td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.author }}</td>
                 <td>
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <td>Bed</td>
-                                <td>Almirah</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tbody>
-                            <tr>
-                                <td>10</td>
-                                <td>20</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <td>Bed</td>
+                        <td>Almirah</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ book.locations.bed }}</td>
+                        <td>{{ book.locations.almirah }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary">Update</button>
+                  <button type="button" class="btn btn-primary">Update</button>
                 </td>
-            </tr>
+              </tr>
         </tbody>
     </table>
 </div>
