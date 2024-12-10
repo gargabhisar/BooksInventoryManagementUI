@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
+  private data: any = null;
+
   private base_url = "https://localhost:7203/";
   private UserLogin_url = "Login/AdminLogin";
   private GetBooksByAlphabet_url = "Books/GetBooksByAlphabet";
@@ -21,5 +23,17 @@ export class ApiService {
     let url = this.base_url + this.GetBooksByAlphabet_url + "?alphabet=" + alphabet;
     let obs = this.http.get<any>(url, alphabet);
     return obs;
+  }
+
+  setData(value: any) {
+    this.data = value;
+  }
+
+  getData() {
+    return this.data;
+  }
+
+  clearData() {
+    this.data = null;
   }
 }

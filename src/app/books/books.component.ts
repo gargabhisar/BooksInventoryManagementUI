@@ -29,11 +29,11 @@ export class BooksComponent {
     let getMyBooksCall = this.webapi.getBooksByAlphabet(this.selectedLetter);
     getMyBooksCall.subscribe((data: any) => {
       this.books = data.result;
-      console.log(this.books);
     })
   }
 
   updateBook(book: Book) {
-    this.router.navigate(['/bookupdate'], { state: book });
+    this.webapi.setData(book);
+    this.router.navigate(['/bookupdate'], { skipLocationChange: true });
   }
 }
