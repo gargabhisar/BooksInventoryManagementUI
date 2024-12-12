@@ -23,7 +23,6 @@ export class BookUpdateComponent {
   }
 
   updateBook(book: Book) {
-    // Logic to save the updated book details to the server
     let updateBookStatus = this.webapi.updateBooksCount(book);
     updateBookStatus.subscribe((data: any) => {
       if (data.statusCode == 400) {
@@ -36,6 +35,10 @@ export class BookUpdateComponent {
       }
       else {
         this.isDisabled = true;
+        Swal.fire({
+          title: data.message,
+          icon: "success"
+        });
       }
     })
   }
