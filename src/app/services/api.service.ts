@@ -8,7 +8,7 @@ import { Book } from '../Models/Book';
 export class ApiService {
 
   private data: any = null;
-
+  private alphabet: any = null;
   private base_url = "http://localhost:8080/";
   private userLogin_url = "Login/AdminLogin";
   private getBooksByAlphabet_url = "Books/GetBooksByAlphabet";
@@ -48,5 +48,17 @@ export class ApiService {
   updateBooksCount(book: Book) {
     let obs = this.http.post(this.base_url + this.updateBooks_url, book);
     return obs;
+  }
+
+  setalphabet(value: any) {
+    this.alphabet = value;
+  }
+
+  getalphabet() {
+    return this.alphabet;
+  }
+
+  clearalphabet() {
+    this.alphabet = null;
   }
 }

@@ -18,6 +18,10 @@ export class BooksComponent {
   selectedLetter!: string; // Default selected letter is 'A'
 
   constructor(private webapi: ApiService, private router: Router) {
+    this.selectedLetter = this.webapi.getalphabet();
+    if (typeof this.selectedLetter != 'undefined' && this.selectedLetter) {
+      this.selectLetter(this.selectedLetter);
+    }
   }
 
   selectLetter(letter: string): void {
@@ -26,6 +30,7 @@ export class BooksComponent {
     getMyBooksCall.subscribe((data: any) => {
       this.books = data.result || [];
     })
+    this.webapi.setalphabet(letter);
   }
 
   updateBook(book: Book) {
