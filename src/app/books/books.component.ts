@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class BooksComponent {
 
   books!: Array<Book>;
-  alphabets: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  alphabets: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*'.split('');
   selectedLetter: string = 'A'; // Default selected letter is 'A'
 
   constructor(private webapi: ApiService, private router: Router) {
