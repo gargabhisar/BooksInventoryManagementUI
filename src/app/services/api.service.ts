@@ -16,6 +16,12 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getToken() {
+    let result = JSON.parse(sessionStorage.getItem('result') || '{}');
+    return result.token;
+  }
+
+
   login(logindetails: any) {
     let obs = this.http.post(this.base_url + this.userLogin_url, logindetails);
     return obs;
