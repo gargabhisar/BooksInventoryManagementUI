@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Book } from '../Models/Book';
 import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-book-update',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './book-update.component.html',
   styleUrl: './book-update.component.css'
 })
