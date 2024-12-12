@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class BookUpdateComponent {
   book!: Book;
+  isDisabled = false;
 
   constructor(private router: Router, private webapi: ApiService) { }
 
@@ -34,7 +35,7 @@ export class BookUpdateComponent {
         });
       }
       else {
-        this.book = book;
+        this.isDisabled = true;
       }
     })
   }

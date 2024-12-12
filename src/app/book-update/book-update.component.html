@@ -28,8 +28,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><input type="number" class="form-control" [(ngModel)]="book.locations.bed" placeholder="Enter Bed Count"></td>
-                        <td><input type="number" class="form-control" [(ngModel)]="book.locations.almirah" placeholder="Enter Bed Count"></td>
+                        <td><input type="number" [disabled]="isDisabled" class="form-control" [(ngModel)]="book.locations.bed" placeholder="Enter Bed Count"></td>
+                        <td><input type="number" [disabled]="isDisabled" class="form-control" [(ngModel)]="book.locations.almirah" placeholder="Enter Bed Count"></td>
                       </tr>
                     </tbody>
                   </table>
