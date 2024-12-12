@@ -35,7 +35,7 @@
                   </table>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-primary" (click)="updateBook(book)">Update</button>
+                  <button type="button" class="btn btn-primary" [disabled]="isDisabled" (click)="updateBook(book)">Update</button>
                 </td>
               </tr>
         </tbody>
