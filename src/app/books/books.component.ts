@@ -13,15 +13,11 @@ import { Router } from '@angular/router';
 })
 export class BooksComponent {
 
-  books!: Array<Book>;
+  books: Array<Book> = [];
   alphabets: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*'.split('');
-  selectedLetter: string = 'A'; // Default selected letter is 'A'
+  selectedLetter!: string; // Default selected letter is 'A'
 
   constructor(private webapi: ApiService, private router: Router) {
-    let getMyBooksCall = this.webapi.getBooksByAlphabet("A");
-    getMyBooksCall.subscribe((data: any) => {
-      this.books = data.result;
-    })
   }
 
   selectLetter(letter: string): void {
