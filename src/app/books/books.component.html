@@ -24,7 +24,7 @@
     <tbody>
       <tr *ngFor="let book of books">
         <td><img [src]="'data:image/png;base64,' + book.image" height="150" alt="{{ book.title }}"></td>
-        <td>{{ book.title }}</td>
+        <td>{{ book.title | titlecase }}</td>
         <td>{{ book.isbn }}</td>
         <td>{{ book.author }}</td>
         <td>

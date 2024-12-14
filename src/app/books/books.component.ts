@@ -28,7 +28,10 @@ export class BooksComponent {
     this.selectedLetter = letter;
     let getMyBooksCall = this.webapi.getBooksByAlphabet(this.selectedLetter);
     getMyBooksCall.subscribe((data: any) => {
-      this.books = data.result || [];
+      const sortedBooks = data.result.sort((a: Book, b: Book) =>
+        a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+      );
+      this.books = sortedBooks;
     })
     this.webapi.setalphabet(letter);
   }
