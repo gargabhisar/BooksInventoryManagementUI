@@ -13,6 +13,7 @@ export class ApiService {
   private userLogin_url = "Login/AdminLogin";
   private getBooksByAlphabet_url = "Books/GetBooksByAlphabet";
   private updateBooks_url = "Books/UpdateBook";
+  private getDasboard_url = "Dashboard/AdminDashboardDetails";
 
   constructor(private http: HttpClient) { }
 
@@ -60,5 +61,11 @@ export class ApiService {
 
   clearalphabet() {
     this.alphabet = null;
+  }
+
+  getDashboardDetails() {
+    let url = this.base_url + this.getDasboard_url;
+    let obs = this.http.get<any>(url);
+    return obs;
   }
 }

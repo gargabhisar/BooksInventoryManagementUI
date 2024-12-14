@@ -1,11 +1,7 @@
 <link rel="stylesheet" type="text/css"
     href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
 <link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
-<link rel="stylesheet" type="text/css"
     href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
-<!-- <link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css"> -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 <div class="px-5 py-5 grey-bg container-fluid vh-100">
@@ -24,14 +20,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-pencil primary font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="fabook" class="success font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
                                     <h4>Total Books</h4>
-                                    <span>Quantity</span>
+                                    <span>Distinct Books</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>18,000</h1>
+                                    <h1>{{dashboardDetails?.totalBooks_Distinct}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -45,14 +41,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="fabook" class="danger font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
                                     <h4>Total Books</h4>
-                                    <span>Distinct Books</span>
+                                    <span>Quantity</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>84,695</h1>
+                                    <h1>{{dashboardDetails?.totalBooks_Quantity}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -68,14 +64,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-heart danger font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="faWarehouse" class="success font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
-                                    <h4>Total Books in Almirah</h4>
-                                    <span>Quantity</span>
+                                    <h4>Total Books in Almirah</h4>                                    
+                                    <span>Distinct Books</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>$76,456.00</h1>
+                                    <h1>{{dashboardDetails?.totalBooksInAlmirah_Distinct}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -89,14 +85,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-wallet success font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="faWarehouse" class="danger font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
                                     <h4>Total Books in Almirah</h4>
-                                    <span>Distinct Books</span>
+                                    <span>Quantity</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>$36,000.00</h1>
+                                    <h1>{{dashboardDetails?.totalBooksInAlmirah_Quantity}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -112,14 +108,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-pencil primary font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="faBed" class="success font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
                                     <h4>Total Books in Bed</h4>
-                                    <span>Quantity</span>
+                                    <span>Distinct Books</span>
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>18,000</h1>
+                                    <h1>{{dashboardDetails?.totalBooksInBed_Distinct}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -133,14 +129,14 @@
                         <div class="card-body cleartfix">
                             <div class="media align-items-stretch">
                                 <div class="align-self-center">
-                                    <i class="icon-speech warning font-large-2 mr-2"></i>
+                                    <fa-icon [icon]="faBed" class="danger font-large-2 mr-2"></fa-icon>
                                 </div>
                                 <div class="media-body">
                                     <h4>Total Books in Bed</h4>
-                                    <span>Distinct Books</span>
+                                    <span>Quantity</span>                                    
                                 </div>
                                 <div class="align-self-center">
-                                    <h1>84,695</h1>
+                                    <h1>{{dashboardDetails?.totalBooksInBed_Quantity}}</h1>
                                 </div>
                             </div>
                         </div>
