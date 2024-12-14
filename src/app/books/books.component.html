@@ -7,6 +7,11 @@
         (click)="selectLetter(letter)">
         {{ letter }}
       </button>
+      <button class="btn"
+        [ngClass]="{ 'btn-primary': selectedLetter === outOfStock, 'btn-outline-primary': selectedLetter !== outOfStock }"
+        (click)="selectLetter(outOfStock)">
+        {{ outOfStock }}
+      </button>
     </div>
   </div>
   <hr>

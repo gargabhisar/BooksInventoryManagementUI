@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class BooksComponent {
 
+  outOfStock : string = 'Out of Stock';
   books: Array<Book> = [];
   alphabets: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*'.split('');
   selectedLetter!: string; // Default selected letter is 'A'
@@ -27,21 +28,39 @@ export class BooksComponent {
   selectLetter(letter: string): void {
     this.selectedLetter = letter;
 
-    // Fetch books by the selected letter
-    this.webapi.getBooksByAlphabet(this.selectedLetter).subscribe({
-      next: (data: any) => {
-        if (data?.result?.length) {
-          this.books = data.result.sort((a: Book, b: Book) =>
-            a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
-          );
-        } else {
-          this.books = [];
+    if (letter != 'Out of Stock') {
+      // Fetch books by the selected letter
+      this.webapi.getBooksByAlphabet(this.selectedLetter).subscribe({
+        next: (data: any) => {
+          if (data?.result?.length) {
+            this.books = data.result.sort((a: Book, b: Book) =>
+              a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+            );
+          } else {
+            this.books = [];
+          }
+        },
+        error: (err) => {
+          console.error("Failed to fetch books:", err);
         }
-      },
-      error: (err) => {
-        console.error("Failed to fetch books:", err);
-      }
-    });
+      });
+    }
+    else {
+      this.webapi.getOutOfStockBooks().subscribe({
+        next: (data: any) => {
+          if (data?.result?.length) {
+            this.books = data.result.sort((a: Book, b: Book) =>
+              a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+            );
+          } else {
+            this.books = [];
+          }
+        },
+        error: (err) => {
+          console.error("Failed to fetch books:", err);
+        }
+      });
+    }
 
     // Update alphabet in the API
     this.webapi.setalphabet(letter);

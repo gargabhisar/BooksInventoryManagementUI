@@ -14,6 +14,7 @@ export class ApiService {
   private getBooksByAlphabet_url = "Books/GetBooksByAlphabet";
   private updateBooks_url = "Books/UpdateBook";
   private getDasboard_url = "Dashboard/AdminDashboardDetails";
+  private getOutOfStockBooks_url = "Books/GetOutOfStockBooks";
 
   constructor(private http: HttpClient) { }
 
@@ -65,6 +66,12 @@ export class ApiService {
 
   getDashboardDetails() {
     let url = this.base_url + this.getDasboard_url;
+    let obs = this.http.get<any>(url);
+    return obs;
+  }
+
+  getOutOfStockBooks(){
+    let url = this.base_url + this.getOutOfStockBooks_url;
     let obs = this.http.get<any>(url);
     return obs;
   }
