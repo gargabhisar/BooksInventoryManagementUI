@@ -26,13 +26,24 @@ export class BooksComponent {
 
   selectLetter(letter: string): void {
     this.selectedLetter = letter;
-    let getMyBooksCall = this.webapi.getBooksByAlphabet(this.selectedLetter);
-    getMyBooksCall.subscribe((data: any) => {
-      const sortedBooks = data.result.sort((a: Book, b: Book) =>
-        a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
-      );
-      this.books = sortedBooks;
-    })
+
+    // Fetch books by the selected letter
+    this.webapi.getBooksByAlphabet(this.selectedLetter).subscribe({
+      next: (data: any) => {
+        if (data?.result?.length) {
+          this.books = data.result.sort((a: Book, b: Book) =>
+            a.title.localeCompare(b.title, undefined, { sensitivity: "base" })
+          );
+        } else {
+          this.books = [];
+        }
+      },
+      error: (err) => {
+        console.error("Failed to fetch books:", err);
+      }
+    });
+
+    // Update alphabet in the API
     this.webapi.setalphabet(letter);
   }
 
