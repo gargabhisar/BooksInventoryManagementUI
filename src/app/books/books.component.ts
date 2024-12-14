@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ApiService } from '../services/api.service';
 import { Book } from '../Models/Book';
 import { Router } from '@angular/router';
+import { IsbnFormatPipe } from "../Pipes/isbn-format.pipe";
 
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IsbnFormatPipe],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
