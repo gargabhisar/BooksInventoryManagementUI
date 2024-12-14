@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
@@ -12,6 +13,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // Inject the Router, API Servicec
   const router = inject(Router);
   const apiService = inject(ApiService);
+  const spinnerService = inject(NgxSpinnerService);
 
   // Get the token from sessionStorage
   const authToken = apiService.getToken();
@@ -21,6 +23,9 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       Authorization: authToken ? `Bearer ${authToken}` : '', // Add your token or custom header
     },
   });
+
+  // Show the spinner
+  spinnerService.show();
 
   return next(clonedRequest).pipe(
     catchError((error) => {
@@ -47,6 +52,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     }),
     finalize(
       () => {
+        spinnerService.hide();
       }
     )
   );
