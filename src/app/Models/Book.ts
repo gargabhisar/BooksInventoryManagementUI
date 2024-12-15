@@ -10,5 +10,6 @@ export interface BookLocation {
     author: string;
     isbn: string;
     locations: BookLocation;
+    lastUpdatedOn: Date;
   }
   
