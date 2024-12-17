@@ -1,52 +1,36 @@
-<div style="display: flex;">
-    <div style="display: inline-block; width: 15%;">
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="fs-4">Sidebar</span>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img class="mobile-img" src="logo.png" alt="InkQuills Logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
             </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a routerLink="/dashboard" routerLinkActive="active" class="nav-link text-white"
-                        ariaCurrentWhenActive="page">
-                        <fa-icon [icon]="faHouse"></fa-icon>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/books" (click)="clearalphabet()" routerLinkActive="active"
-                        class="nav-link text-white" ariaCurrentWhenActive="page">
-                        <fa-icon [icon]="faBook"></fa-icon>
-                        Books
-                    </a>
-                </li>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-            <hr>
-            <div>
-                <table>
-                    <tr>
-                        <td rowspan="2"><fa-icon [icon]="faCircleUser"></fa-icon></td>
-                        <td>&nbsp;</td>
-                        <td><strong>{{Name}}</strong></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>{{Role}}</td>
-                    </tr>
-                </table>
-            </div>
-            <hr>
-            <a routerLink="/login" (click)="logout()" routerLinkActive="active" class="nav-link text-white"
-                ariaCurrentWhenActive="page">
-                <fa-icon [icon]="faPowerOff"></fa-icon>
-                Logout
-            </a>
-        </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
-    <div style="display: inline-block; width: 85%;">
-        <router-outlet />
-    </div>
-</div>
+  </nav>
