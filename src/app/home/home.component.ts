@@ -17,6 +17,8 @@ export class HomeComponent {
   faCircleUser = faCircleUser;
   faPowerOff = faPowerOff;
 
+  isActive: boolean = false;
+
   Name : string = 'Login User';
   Role : string = 'Role';
   
@@ -34,5 +36,9 @@ export class HomeComponent {
   logout()
   {
     sessionStorage.clear();
+  }
+
+  toggleSidebar() {
+    this.isActive = !this.isActive;
   }
 }
