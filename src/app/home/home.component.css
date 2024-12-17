@@ -40,7 +40,7 @@ header nav ul li a {
     line-height: 50px;
     padding: 0 20px;
     color: #111;
-    font-size: 14px;
+    font-size: 14px !important;
     text-decoration: none;
     display: block;
     text-transform: uppercase;
