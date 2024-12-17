@@ -15,14 +15,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 header .logo {
     /*   color: #FFF; */
     width: 100%;
     max-width: 145px;
-
 }
 
 header nav ul {
@@ -80,7 +78,7 @@ header nav ul li a.active {
         left: -80%;
         transition: 0.5s;
         box-shadow: 5px 0px 22px 0px rgba(0, 0, 0, 0.34);
-
+        z-index: 1000;
     }
 
     header nav.active {
@@ -98,4 +96,8 @@ header nav ul li a.active {
         color: #111;
         font-size: 10px;
     }
+}
+
+.router {
+    margin-top: calc(var(--header-height, 60px));
 }

@@ -1,9 +1,3 @@
-<link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
-<link rel="stylesheet" type="text/css"
-    href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
 <div class="px-5 py-5 grey-bg container-fluid vh-100">
     <h2 class="text-center">Books Dasboard</h2>
     <section id="stats-subtitle">
@@ -14,153 +8,122 @@
         </div>
 
         <div class="row">
-            <div class="col-xl-6 col-md-12">
-                <div class="card overflow-hidden">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="fabook" class="success font-large-2 mr-2"></fa-icon>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Books</h4>
-                                    <span>Distinct Books</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooks_Distinct}}</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-md-12">
+            <div class="col-xl-3 col-sm-6 mb-4">
                 <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="fabook" class="danger font-large-2 mr-2"></fa-icon>
-                                </div>
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
                                 <div class="media-body">
-                                    <h4>Total Books</h4>
-                                    <span>Quantity</span>
+                                    <h4><fa-icon [icon]="fabook" class="text-success font-large-2 mr-2"></fa-icon>Total
+                                        Books</h4>
+                                    <span class="font-weight-bolder">Distinct</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooks_Quantity}}</h1>
-                                </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-success">{{dashboardDetails?.totalBooks_Distinct}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-6 col-md-12">
+            <div class="col-xl-3 col-sm-6 mb-4">
                 <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="faWarehouse" class="success font-large-2 mr-2"></fa-icon>
-                                </div>
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
                                 <div class="media-body">
-                                    <h4>Total Books in Almirah</h4>                                    
-                                    <span>Distinct Books</span>
+                                    <h4><fa-icon [icon]="fabook" class="text-danger font-large-2 mr-2"></fa-icon>Total
+                                        Books</h4>
+                                    <span class="font-weight-bolder">Quantity</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooksInAlmirah_Distinct}}</h1>
-                                </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-danger">{{dashboardDetails?.totalBooks_Quantity}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-6 col-md-12">
+            <div class="col-xl-3 col-sm-6 mb-4">
                 <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="faWarehouse" class="danger font-large-2 mr-2"></fa-icon>
-                                </div>
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
                                 <div class="media-body">
-                                    <h4>Total Books in Almirah</h4>
-                                    <span>Quantity</span>
+                                    <h4><fa-icon [icon]="faWarehouse" class="text-success font-large-2 mr-2"></fa-icon>Books in Almirah</h4>
+                                    <span class="font-weight-bolder">Distinct</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooksInAlmirah_Quantity}}</h1>
-                                </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-success">{{dashboardDetails?.totalBooksInAlmirah_Distinct}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-6 col-md-12">
-                <div class="card overflow-hidden">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="faBed" class="success font-large-2 mr-2"></fa-icon>
-                                </div>
-                                <div class="media-body">
-                                    <h4>Total Books in Bed</h4>
-                                    <span>Distinct Books</span>
-                                </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooksInBed_Distinct}}</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6 col-md-12">
+            <div class="col-xl-3 col-sm-6 mb-4">
                 <div class="card">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="faBed" class="danger font-large-2 mr-2"></fa-icon>
-                                </div>
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
                                 <div class="media-body">
-                                    <h4>Total Books in Bed</h4>
-                                    <span>Quantity</span>                                    
+                                    <h4><fa-icon [icon]="faWarehouse" class="text-danger font-large-2 mr-2"></fa-icon>Books in Almirah</h4>
+                                    <span class="font-weight-bolder">Quantity</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooksInBed_Quantity}}</h1>
-                                </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-danger">{{dashboardDetails?.totalBooksInAlmirah_Quantity}}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-6 col-md-12">
-                <div class="card overflow-hidden">
-                    <div class="card-content">
-                        <div class="card-body cleartfix">
-                            <div class="media align-items-stretch">
-                                <div class="align-self-center">
-                                    <fa-icon [icon]="faCircleXmark" class="warning font-large-2 mr-2"></fa-icon>
-                                </div>
+            <div class="col-xl-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
                                 <div class="media-body">
-                                    <h4>Books Out of Stock</h4>
-                                    <span>Distinct Books</span>
+                                    <h4><fa-icon [icon]="faBed" class="text-success font-large-2 mr-2"></fa-icon>Books in Bed</h4>
+                                    <span class="font-weight-bolder">Distinct</span>
                                 </div>
-                                <div class="align-self-center">
-                                    <h1>{{dashboardDetails?.totalBooks_OutofStock}}</h1>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-success">{{dashboardDetails?.totalBooksInBed_Distinct}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <div class="media-body">
+                                    <h4><fa-icon [icon]="faBed" class="text-danger font-large-2 mr-2"></fa-icon>Books in Bed</h4>
+                                    <span class="font-weight-bolder">Quantity</span>
                                 </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-danger">{{dashboardDetails?.totalBooksInBed_Quantity}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card-header p-2 ps-3">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <div class="media-body">
+                                    <h4><fa-icon [icon]="faCircleXmark" class="text-warning-emphasis font-large-2 mr-2"></fa-icon>Books Out of Stock</h4>
+                                    <span class="font-weight-bolder">Distinct</span>
+                                </div>
+                            </div>
+                            <div class="text-center border-radius-lg">
+                                <h4 class="mb-0 text-warning-emphasis">{{dashboardDetails?.totalBooks_OutofStock}}</h4>
                             </div>
                         </div>
                     </div>
@@ -169,3 +132,24 @@
         </div>
     </section>
 </div>
+<!-- <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="card">
+        <div class="card-header p-2 ps-3">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p class="text-sm mb-0 text-capitalize">Sales</p>
+                    <h4 class="mb-0">$103,430</h4>
+                </div>
+                <div
+                    class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+                    <i class="material-symbols-rounded opacity-10">weekend</i>
+                </div>
+            </div>
+        </div>
+        <hr class="dark horizontal my-0">
+        <div class="card-footer p-2 ps-3">
+            <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+5% </span>than yesterday
+            </p>
+        </div>
+    </div>
+</div> -->
