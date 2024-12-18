@@ -3,7 +3,7 @@ import { ApiService } from '../services/api.service';
 import { Dashboard } from '../Models/Dashboard';
 import Swal from 'sweetalert2';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBed, faWarehouse, faBook, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBed, faWarehouse, faBook, faCircleXmark, faBoxArchive } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +18,7 @@ export class DashboardComponent {
   faWarehouse = faWarehouse;
   fabook = faBook;
   faCircleXmark = faCircleXmark;
+  faBoxArchive= faBoxArchive;
 
   dashboardDetails: Dashboard | null = null;
 
