@@ -65,15 +65,21 @@
 
   <!-- Mobile View -->
   <div class="d-block d-md-none">
-    <div class="card mb-2" *ngFor="let item of data; let i = index">
+    <div class="card mb-2" *ngFor="let book of books; let i = index">
       <div class="card-body d-flex align-items-center">
-        <img [src]="item.image" alt="Image of {{ item.name }}" class="img-thumbnail me-3" width="60" height="60" />
+        <img [src]="'data:image/png;base64,' + book.image" alt="Image of {{ book.title }}" class="img-thumbnail me-3"
+          width="75" />
         <div>
-          <h5 class="card-title">#{{ i + 1 }} - {{ item.name }}</h5>
+          <h5 class="card-title">#{{ i + 1 }} - {{ book.title | titlecase }}</h5>
           <p class="card-text">
-            <strong>Email:</strong> {{ item.email }} <br />
-            <strong>Phone:</strong> {{ item.phone }}
-          </p>
+            <strong>Almirah:</strong> {{ book.locations.almirah }} <br />
+            <strong>Bed:</strong> {{ book.locations.bed }} <br />
+            <strong>Box:</strong> {{ book.locations.box }}            
+          </p>          
+          <hr>
+          <button type="button" class="btn btn-primary btn-sm" (click)="updateBook(book)">Update</button>
+          <br />
+          <strong>Last Updated On:</strong> {{ book.lastUpdatedOn | date:'d-MMM-yyyy h:mm:ss a' }}
         </div>
       </div>
     </div>
