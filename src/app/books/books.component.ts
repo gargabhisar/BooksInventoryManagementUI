@@ -26,6 +26,27 @@ export class BooksComponent {
     }
   }
 
+  data = [
+    { 
+      name: 'John Doe', 
+      email: 'john.doe@example.com', 
+      phone: '123-456-7890', 
+      image: 'https://via.placeholder.com/50' 
+    },
+    { 
+      name: 'Jane Smith', 
+      email: 'jane.smith@example.com', 
+      phone: '987-654-3210', 
+      image: 'https://via.placeholder.com/50' 
+    },
+    { 
+      name: 'Alice Johnson', 
+      email: 'alice.johnson@example.com', 
+      phone: '555-123-4567', 
+      image: 'https://via.placeholder.com/50' 
+    }
+  ];
+
   selectLetter(letter: string): void {
     this.selectedLetter = letter;
 
